@@ -13,6 +13,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Secret
+        env:
+          SCAVENGER_CODEWORD: ${{ vars.SCAVENGER_CODEWORD }}
+        run: echo $SCAVENGER_CODEWORD
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
